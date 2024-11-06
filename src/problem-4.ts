@@ -9,21 +9,18 @@ type Rectangle = {
 	height: number;
 };
 
-type Shape = Circle | Rectangle;
-
-function calculateShapeArea(shape: Shape): number {
-	let area: number;
+function calculateShapeArea(shape: Circle | Rectangle): number {
 	if (shape.shape === "circle") {
-		area = Math.PI * shape.radius * shape.radius;
+		const circleArea = Math.PI * shape.radius * shape.radius;
+		return parseFloat(circleArea.toFixed(2));
 	} else {
-		area = shape.width * shape.height;
+		const rectangleArea = shape.width * shape.height;
+		return rectangleArea;
 	}
-
-	return area;
 }
 
 const circleArea = calculateShapeArea({ shape: "circle", radius: 5 });
-console.log(circleArea.toFixed(2));
+console.log(circleArea);
 
 const rectangleArea = calculateShapeArea({
 	shape: "rectangle",
