@@ -19,7 +19,7 @@ function calculateShapeArea(shape: Shape): number {
 		area = shape.width * shape.height;
 	}
 
-	return Number(area);
+	return area;
 }
 
 const circleArea = calculateShapeArea({ shape: "circle", radius: 5 });
