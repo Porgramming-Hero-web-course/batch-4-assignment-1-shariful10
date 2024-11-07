@@ -13,9 +13,11 @@ function calculateShapeArea(shape: Circle | Rectangle): number {
 	if (shape.shape === "circle") {
 		const circleArea = Math.PI * shape.radius * shape.radius;
 		return parseFloat(circleArea.toFixed(2));
-	} else {
+	} else if (shape.shape === "rectangle") {
 		const rectangleArea = shape.width * shape.height;
 		return rectangleArea;
+	} else {
+		throw new Error("Invalid shape");
 	}
 }
 
